@@ -38,7 +38,12 @@
       ]
     }
   },
-  "files": {},
+  "files": {
+    "loopback#static": {}
+  },
+  "files:after": {
+    "./middlewares/reactRouter": {}
+  },
   "final": {
     "loopback#urlNotFound": {}
   },
