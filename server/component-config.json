@@ -1,6 +1,10 @@
 {
   "loopback-component-explorer": {
     "mountPath": "/explorer",
-    "generateOperationScopedModels": true
+    "generateOperationScopedModels": true,
+    "apiInfo": {
+      "title": "Someshit API explorer",
+      "description": "API explorer of someshit"
+    }
   }
 }
