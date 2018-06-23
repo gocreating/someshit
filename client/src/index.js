@@ -4,23 +4,24 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import registerServiceWorker from './registerServiceWorker';
 import PageLoading from './utils/PageLoading';
-import NotFoundPage from './pages/NotFoundPage';
 
 let routes = [{
   exact: true,
   path: '/',
-  component: import('./pages/HomePage'),
+  component: () => import('./pages/HomePage'),
 }, {
   path: '/user/login',
-  component: import('./pages/LoginPage'),
+  component: () => import('./pages/user/LoginPage'),
+}, {
+  component: () => import('./pages/NotFoundPage'),
 }];
 
-let asyncRoutes = routes.map(({ path, component, ...rest}) => (
+let asyncRoutes = routes.map(({ path, component, ...rest}, idx) => (
   <Route
-    key={path}
+    key={path || idx}
     path={path}
     component={Loadable({
-      loader: () => component,
+      loader: component,
       loading: PageLoading,
       delay: 300,
     })}
@@ -32,7 +33,6 @@ ReactDOM.render((
   <BrowserRouter>
     <Switch>
       {asyncRoutes}
-      <Route component={NotFoundPage} />
     </Switch>
   </BrowserRouter>
 ), document.getElementById('root'));
