@@ -1,12 +1,15 @@
 import React from 'react';
-import PageLaout from '../layouts/PageLayout';
+import { Loader, Dimmer, Segment } from 'semantic-ui-react'
+import PageLayout from '../layouts/PageLayout';
 
-function PageLoading() {
-  return (
-    <PageLaout>
-      Loading...
-    </PageLaout>
-  );
-};
+let PageLoading = () => (
+  <PageLayout container paddingTop={30}>
+    <Segment basic>
+      <Dimmer active inverted>
+        <Loader inverted content='Loading' />
+      </Dimmer>
+    </Segment>
+  </PageLayout>
+);
 
 export default PageLoading

@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Container } from 'semantic-ui-react';
+import Navigation from '../utils/Navigation';
+import 'semantic-ui-css/semantic.min.css';
 
-class PageLaout extends Component {
-  render() {
-    return (
-      <div>
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/user/register'>Register</Link></li>
-          <li><Link to='/user/login'>Login</Link></li>
-        </ul>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+let PageLayout = ({
+  container, paddingTop, children, ...rest
+}) => (
+  <div>
+    <Navigation />
+    <div style={{ paddingTop: paddingTop }}>
+      {container ? (
+        <Container {...rest}>
+          {children}
+        </Container>
+      ) : children}
+    </div>
+  </div>
+);
 
-export default PageLaout;
+export default PageLayout;

@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import PageLaout from '../layouts/PageLayout';
+import React from 'react';
+import PageLayout from '../layouts/PageLayout';
+import Placeholder from '../utils/Placeholder';
 
-class NotFoundPage extends Component {
-  render() {
-    return (
-      <PageLaout>
-        Not Found
-      </PageLaout>
-    );
-  }
-}
+const NotFoundPage = (props) => (
+  <PageLayout container paddingTop={30}>
+    <Placeholder header="Page Not Found">
+      Bro, this page doesn't give you a shit.
+    </Placeholder>
+  </PageLayout>
+);
 
 export default NotFoundPage;

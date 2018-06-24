@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import PageLayout from '../layouts/PageLayout';
+import PageLayout from '../../layouts/PageLayout';
 
-class HomePage extends Component {
+class RegisterPage extends Component {
   render() {
     return (
       <PageLayout container paddingTop={30}>
-        Home
+        Register
       </PageLayout>
     );
   }
 }
 
-export default HomePage;
+export default RegisterPage;

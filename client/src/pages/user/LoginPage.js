@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PageLaout from '../layouts/PageLayout';
+import PageLayout from '../../layouts/PageLayout';
 
 class LoginPage extends Component {
   render() {
     return (
-      <PageLaout>
+      <PageLayout container paddingTop={30}>
         Login
-      </PageLaout>
+      </PageLayout>
     );
   }
 }
