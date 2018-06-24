@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
 import Loadable from 'react-loadable';
 import PageLoading from './utils/PageLoading';
 
@@ -31,12 +31,12 @@ let asyncRoutes = routes.map(({ path, component, ...rest}, idx) => (
   />
 ));
 
-let App = () => (
-  <BrowserRouter>
+let App = ({ history }) => (
+  <ConnectedRouter history={history}>
     <Switch>
       {asyncRoutes}
     </Switch>
-  </BrowserRouter>
+  </ConnectedRouter>
 );
 
 export default App;

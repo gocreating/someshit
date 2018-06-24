@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "connected-react-router": "^4.3.0",
+    "cookie": "^0.3.1",
+    "lodash": "^4.17.10",
+    "object-assign": "^4.1.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-loadable": "^5.4.0",
@@ -10,8 +14,11 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0",
     "semantic-ui-css": "^2.3.2",
-    "semantic-ui-react": "^0.81.1"
+    "semantic-ui-react": "^0.81.1",
+    "superagent": "^3.8.3"
   },
   "scripts": {
     "start": "cross-env PORT=8000 react-scripts start",
